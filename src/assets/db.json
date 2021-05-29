@@ -1,0 +1,22 @@
+{
+    "universities": [
+    {
+        "id": 1,
+        "title": "МГУ",
+        "price": "2000",
+        "img": "mgy.jpg",
+        "longDescr": "МГУ описание",
+        "since": 1755,
+        "father": "Ломоносов М.В.",
+        "topNumber": 189
+    },
+    {
+        "id": 2,
+        "title": "Стенфорд",
+        "price": "7000",
+        "img": "stanford.jpg",
+        "longDescr": "Стенфорд описание"
+    }
+    
+]
+}
