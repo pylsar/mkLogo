@@ -49,14 +49,19 @@ export default class Sketch {
   }
 
   addObjects() {
+  
 
-    let canvas = document.createElement('canvas');
-    document.body.appendChild(canvas).classList.add('one');
+    let TextCanvas = new getText();
+    TextCanvas.draw();
+
+    let canvasTexture = new THREE.Texture(TextCanvas.canvas);
+    canvasTexture.needsUpdate = true; // без этого не рисует
 
     let material = new THREE.MeshBasicMaterial({
       color: "0xff0000",
-      wireframe: true,
+      // wireframe: true,
     //   map: new THREE.TextureLoader().load('./mk.jpg')
+      map: canvasTexture
     });
     let geometry = new THREE.SphereGeometry(2, 20, 20);
 

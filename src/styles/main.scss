@@ -1,19 +1,14 @@
-// body{
-//     margin: 0;
-// }
-// body > canvas{
-//     position: fixed;
-//     left: 0;
-//     right: 0;
-//     border: 1px solid red;
-//     width: 300px;
-//     z-index: 000;
-// }
-.one{
-    //     position: fixed;
-    // left: 0;
-    // right: 0;
+body{
+    margin: 0;
+}
+
+.text{
+    position: fixed;
+    left: 0;
+    top: 0;
     border: 1px solid red;
-    // width: 300px;
-    // z-index: 000;
+    width: 300px;
+
+    z-index: 000;
+    display: block;
 }
