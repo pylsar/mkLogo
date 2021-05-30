@@ -17,10 +17,11 @@ export default class getText{
     draw(){
         this.ctx.fillStyle = '#ffffff';
         this.ctx.clearRect(0, 0, this.size, this.size);
-        this.ctx.fillText(this.text, 100, 150);
 
-        // this.ctx.fillRect(100, 100, 250, 250);
-        // this.ctx.fillRect(600, 600, 250, 250);
+        this.ctx.textAlign = 'center';
+        this.ctx.textBaseline = 'middle';
+
+        this.ctx.fillText(this.text, this.size/2, this.size/2);
     }
 }
 

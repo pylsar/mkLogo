@@ -49,8 +49,6 @@ export default class Sketch {
   }
 
   addObjects() {
-  
-
     let TextCanvas = new getText();
     TextCanvas.draw();
 
