@@ -19,7 +19,7 @@ export default class getText{
         this.ctx.clearRect(0, 0, this.size, this.size);
 
         this.ctx.textAlign = 'center';
-        this.ctx.textBaseline = 'middle';
+        this.ctx.textBaseline = 'middle'; // аналог transform translate(-50%)
 
         this.ctx.fillText(this.text, this.size/2, this.size/2);
     }

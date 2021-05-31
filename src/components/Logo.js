@@ -56,20 +56,24 @@ export default class Sketch {
     canvasTexture.needsUpdate = true; // без этого не рисует
 
     let material = new THREE.MeshBasicMaterial({
-      color: "0xff0000",
+      // color: "0xff0000",
       // wireframe: true,
-    //   map: new THREE.TextureLoader().load('./mk.jpg')
+      // map: new THREE.TextureLoader().load('./mk.jpg')
+      transparent: true,
+      side: THREE.DoubleSide,
       map: canvasTexture
     });
+    
     let geometry = new THREE.SphereGeometry(2, 20, 20);
 
-    let mesh = new THREE.Mesh(geometry, material);
-    this.scene.add(mesh);
+    this.meshText1 = new THREE.Mesh(geometry, material);
+    this.scene.add(this.meshText1);
   }
 
   animate() {
     this.time += 0.05;
 
+    this.meshText1.rotation.y = - this.time / 10;
     requestAnimationFrame(this.animate.bind(this));
     this.render();
   }
