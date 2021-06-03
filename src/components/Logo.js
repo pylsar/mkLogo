@@ -2,7 +2,8 @@
 import * as THREE from "three";
 let OrbitControls = require("three-orbit-controls")(THREE);
 
-import getText from './getText.js'
+import getText from './getText.js';
+import img from '../assets/images/mk.jpg';
 
 
 export default class Sketch {
@@ -56,7 +57,7 @@ export default class Sketch {
     canvasTexture.needsUpdate = true; // без этого не рисует
 
     let material = new THREE.MeshBasicMaterial({
-      // color: "0xff0000",
+      // color: 0xff0000,
       // wireframe: true,
       // map: new THREE.TextureLoader().load('./mk.jpg')
       transparent: true,
@@ -64,16 +65,27 @@ export default class Sketch {
       map: canvasTexture
     });
     
-    let geometry = new THREE.SphereGeometry(2, 20, 20);
+    let geometry = new THREE.SphereGeometry(2, 200, 200);
 
-    this.meshText1 = new THREE.Mesh(geometry, material);
-    this.scene.add(this.meshText1);
+    this.meshText = new THREE.Mesh(geometry, material);
+    this.scene.add(this.meshText);
+
+    let geometryCircle = new THREE.CircleGeometry(1.6, 64);
+    let materialCircle = new THREE.MeshBasicMaterial({
+      color: 0xff0000,
+      side: THREE.DoubleSide,
+      map: new THREE.TextureLoader().load(img)
+    });
+
+    this.meshCircle = new THREE.Mesh(geometryCircle, materialCircle);
+    this.scene.add(this.meshCircle);
+
   }
 
   animate() {
     this.time += 0.05;
 
-    this.meshText1.rotation.y = - this.time / 10;
+    this.meshText.rotation.y = - this.time / 10;
     requestAnimationFrame(this.animate.bind(this));
     this.render();
   }

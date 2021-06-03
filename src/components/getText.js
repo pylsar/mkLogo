@@ -3,7 +3,7 @@ export default class getText{
     constructor(){
         this.canvas = document.createElement('canvas');
         this.size = 1024
-        document.body.appendChild(this.canvas).classList.add('text');
+        // document.body.appendChild(this.canvas).classList.add('text');
         this.ctx = this.canvas.getContext('2d');
       
         this.canvas.width = this.size;
